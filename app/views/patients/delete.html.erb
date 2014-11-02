@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="patients delete">
+  <h2 style="text-align:center">Delete Patient Record</h2>
+
+  <%= form_for(:patient, :url => {:action => 'destroy', :id => @patient.id}) do |f| %>
+
+  <p style="text-align:center">Are you sure you want to permanently delete this Patient Record?</p>
+  <p class="reference-name" style="text-align:center"><%= @patient.name %></p>
+
+    
+    <div class="form-buttons">
+      <%= submit_tag("Delete Patient") %>
+    </div>
+
+  <% end %>
+</div>

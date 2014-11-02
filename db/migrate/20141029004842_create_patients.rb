@@ -1,5 +1,5 @@
 class CreatePatients < ActiveRecord::Migration
-  def up
+  def change
     create_table :patients do |t|
 
       t.string "name", :limit => 25
@@ -12,8 +12,4 @@ class CreatePatients < ActiveRecord::Migration
     end
   end
 
-  def down
-  	drop_table :patients
-  	
-  end
 end

@@ -1,0 +1,36 @@
+<!--<h1>Welcome to Clinic Management System</h1>-->
+<%= link_to('Manage Patients', {:action => 'new'}) %> | 
+<%= link_to('Manage Wards', {:controller => 'wards',:action => 'new'}) %>
+
+<div class="patients index">
+  <h2 style="text-align:center">List of Patients</h2>
+
+  <%= link_to("Add New Patient", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Patient list">
+    <tr class="header">
+      <th>Patient</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Diagnosis</th>
+      <th>Status</th>
+      <th>Ward</th>
+    </tr>
+    <% @patients.each do |patient| %>
+    <tr>
+      <td><%= patient.name %></td>
+      <td><%= patient.address %></td>
+      <td><%= patient.age %></td>
+      <td><%= patient.diagnosis %></td>
+      <td><%= patient.status %></td>
+      <td><%= patient.ward_id %></td>
+      
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => patient.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => patient.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => patient.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

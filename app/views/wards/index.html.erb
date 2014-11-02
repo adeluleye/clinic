@@ -1,0 +1,26 @@
+<%= @ward_title %>
+
+<div class="wards index">
+  <h2>Wards</h2>
+
+  <%= link_to("Add New Ward", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Ward list">
+    <tr class="header">
+      <th>Ward</th>
+      <th>Patients</th>
+    </tr>
+    <% @wards.each do |ward| %>
+    <tr>
+      <td><%= ward.name %></td>
+      
+      <td class="center"><%= ward.patients.size %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => ward.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => ward.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => ward.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

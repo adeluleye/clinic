@@ -1,0 +1,15 @@
+<div class="patients new">
+
+<h1 style="text-align: center;">New Patient Record</h1>
+  <%= form_for(:patient, :url => {:action => 'create'}) do |f| %>
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <div class="form-buttons">
+      <%= submit_tag("Register Patient") %>
+    </div>
+
+  <% end %>
+
+ 
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+</div>

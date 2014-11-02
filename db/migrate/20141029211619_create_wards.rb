@@ -1,14 +1,10 @@
 class CreateWards < ActiveRecord::Migration
-  def up
+  def change
     create_table :wards do |t|
 
-      t.string "ward_name", :limit => 25
+      t.string "name", :limit => 25
       t.timestamps
     end
   end
 
-  def down
-  	drop_table :wards
-  	
-  end
 end

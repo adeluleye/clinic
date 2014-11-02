@@ -1,0 +1,41 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="patients show">
+  <h2>Show Patient</h2>
+
+  <table summary="Patient Detailed Information">
+    <tr>
+      <th>Name</th>
+      <td><%= @patient.name %></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td><%= @patient.address %></td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td><%= @patient.age %></td>
+    </tr>
+    <tr>
+      <th>Diagnosis</th>
+      <td><%= @patient.diagnosis %></td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td><%= @patient.status %></td>
+    </tr>
+    <tr>
+      <th>Ward Identity</th>
+      <td><%= @patient.ward_id %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @patient.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @patient.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

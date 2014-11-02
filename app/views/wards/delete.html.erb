@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="wards delete">
+  <h2>Delete Ward</h2>
+
+  <%= form_for(:ward, :url => {:action => 'destroy', :id => @ward.id}) do |f| %>
+
+  <p>Are you sure you want to permanently delete this Ward?</p>
+  <p class="reference-name"><%= @ward.name %></p>
+
+    
+    <div class="form-buttons">
+      <%= submit_tag("Delete Ward") %>
+    </div>
+
+  <% end %>
+</div>

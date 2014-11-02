@@ -1,0 +1,14 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="wards new">
+  <h2 style="text-align:center;">Add New Ward</h2>
+
+  <%= form_for(:ward, :url => {:action => 'create'}) do |f| %>
+  	<%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Ward") %>
+    </div>
+
+  <% end %>
+</div>

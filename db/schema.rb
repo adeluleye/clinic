@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141029211619) do
   end
 
   create_table "wards", force: true do |t|
-    t.string   "ward_name",  limit: 25
+    t.string   "name",       limit: 25
     t.datetime "created_at"
     t.datetime "updated_at"
   end

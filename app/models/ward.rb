@@ -1,8 +1,9 @@
 class Ward < ActiveRecord::Base
 
 	has_many :patients
-
-	validates :ward_name, presence: true
+	
+	validates_presence_of :name
+	validates_uniqueness_of :name
 	
 	
 end

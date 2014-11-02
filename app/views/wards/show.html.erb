@@ -1,0 +1,21 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="wards show">
+  <h2>Show Ward</h2>
+
+  <table summary="Ward detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @ward.name %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @ward.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @ward.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
