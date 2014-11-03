@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  #root 'patients#index'
+  root 'authenticate#login'
+  get 'admin', :to => "authenticate#index"
+
+  
+
   #get 'wards/index'
 
   #get 'wards/show'
@@ -13,7 +20,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   #resources :patients
   # You can have the root of your site routed with "root"
-  root 'patients#index'
+  
   match ':controller(/:action(/:id))', :via => [:get, :post] 
 
   # Example of regular route:
