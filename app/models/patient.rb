@@ -7,4 +7,5 @@ class Patient < ActiveRecord::Base
 	validates :age, presence: true
 	validates :diagnosis, presence: true
 	validates :status, presence: true
+	validates :ward_id, presence: true
 end

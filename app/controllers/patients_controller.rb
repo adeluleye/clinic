@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
-	#layout 'admin'
+	layout 'admin'
+	before_action :confirm_logged_in
 	http_basic_authenticate_with name: "team2", password: "123456", only: :destroy
 	
 
@@ -8,7 +9,7 @@ class PatientsController < ApplicationController
 	end
 
 	def new
-		@patient = Patient.new({:name => "Patient Name",:address => "Patient Address", :age => "Patient Age"})
+		@patient = Patient.new#({:name => "Patient Name",:address => "Patient Address", :age => "Patient Age"})
 	end
 
 	def show
@@ -28,6 +29,7 @@ class PatientsController < ApplicationController
 	    else
 	      #If save fails, redisplay the form so user can fix problems
 	      render('new')
+#	      render 'new', layout: ''
 	    end
 	end
 
@@ -72,6 +74,6 @@ class PatientsController < ApplicationController
     	#same as using "params[:ward]", except that it:
     	#-raises an error if :ward is not present
     	#-allows listed attributes to be mass-assigned
-	    params.require(:patient).permit(:name, :address, :age, :diagnosis, :status)
+	    params.require(:patient).permit(:name, :address, :age, :diagnosis, :status,:ward_id)
 	end
 end

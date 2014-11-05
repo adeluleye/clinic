@@ -1,5 +1,6 @@
 class WardsController < ApplicationController
-  #layout 'admin'
+  layout 'admin'
+  before_action :confirm_logged_in
 
   def index
     @wards = Ward.all
@@ -7,7 +8,7 @@ class WardsController < ApplicationController
   end
 
   def new
-    @ward = Ward.new({:name => "Enter Patient Name"})
+    @ward = Ward.new#({:name => "Enter Patient Ward"})
   end
 
   def show

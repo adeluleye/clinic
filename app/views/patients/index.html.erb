@@ -1,6 +1,6 @@
 <!--<h1>Welcome to Clinic Management System</h1>-->
 <%= link_to('Manage Patients', {:action => 'new'}) %> | 
-<%= link_to('Manage Wards', {:controller => 'wards',:action => 'new'}) %>
+<%= link_to('Manage Wards', {:controller => 'wards',:action => 'index'}) %>
 
 <div class="patients index">
   <h2 style="text-align:center">List of Patients</h2>
@@ -23,7 +23,8 @@
       <td><%= patient.age %></td>
       <td><%= patient.diagnosis %></td>
       <td><%= patient.status %></td>
-      <td><%= patient.ward_id %></td>
+      <td><%= patient.ward.try(:name) %>
+      <!--<td><%= patient.ward_id %></td>-->
       
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => patient.id}, :class => 'action show') %>
